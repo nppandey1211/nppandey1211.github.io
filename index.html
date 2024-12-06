@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="[Your Name]'s personal website.">
-  <title>[Your Name]</title>
+  <meta name="description" content="N.P. Pandey's personal website.">
+  <title>N.P. Pandey</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
-    <h1>[Your Name]</h1>
+    <h1>N.P. Pandey</h1>
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -20,28 +20,38 @@
   <main>
     <section id="about">
       <h2>About</h2>
-      <p>Hello! I'm [Your Name]. I'm passionate about [your main interests or profession]. 
-      My work focuses on [a brief summary of your projects or career].</p>
+      <p>Welcome! I’m N.P. Pandey, a dedicated professional with extensive experience in [your field or industry]. 
+      My passion lies in driving innovation, leveraging data-driven insights, and fostering collaborative 
+      environments that enable teams to deliver impactful solutions.</p>
+      <p>Over the years, I’ve honed my skills in [list a few skills or areas of expertise], continuously seeking to 
+      learn and grow as the industry evolves. I’m committed to excellence, problem-solving, and strategic thinking 
+      to achieve meaningful outcomes.</p>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
       <ul>
-        <li><strong>Project A</strong>: A brief description of what this project is about.</li>
-        <li><strong>Project B</strong>: Another project overview here.</li>
+        <li><strong>Project A:</strong> A brief description highlighting your role, the technologies you used, and the impact it had.</li>
+        <li><strong>Project B:</strong> Another project overview, focusing on results or unique challenges you addressed.</li>
         <!-- Add more projects as needed -->
       </ul>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>Email me at: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-      <p>Connect with me on <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+      <p>If you’d like to connect, feel free to reach out:</p>
+      <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/nppandey/" target="_blank" rel="noopener noreferrer">linkedin.com/in/nppandey/</a></p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; [Current Year] [Your Name]. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> N.P. Pandey. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Dynamically update the year in the footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
