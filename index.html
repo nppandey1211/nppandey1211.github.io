@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nilesh Prasad Pandey | PhD Student at UC San Diego</title>
+    <meta name="description" content="PhD Student in Computer Science at UC San Diego. Research focus on Inference and Training Efficiency, Model Compression, Hardware-Algorithm Co-design.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Academicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #0f4c75;
+            --accent-light: #3282b8;
+            --text: #2d3436;
+            --text-light: #636e72;
+            --bg: #fefefe;
+            --bg-alt: #f8f9fa;
+            --border: #e9ecef;
+            --serif: 'Cormorant Garamond', Georgia, serif;
+            --sans: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--sans);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(254, 254, 254, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 65px;
+        }
+
+        .nav-brand {
+            font-family: var(--serif);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 120px 2rem 4rem;
+        }
+
+        /* About Section */
+        .about {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 4rem;
+            margin-bottom: 5rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-section {
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--border);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 40px rgba(15, 76, 117, 0.15);
+        }
+
+        .profile-placeholder {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-family: var(--serif);
+            font-size: 4rem;
+            font-weight: 600;
+            color: white;
+            letter-spacing: -0.02em;
+        }
+
+        .profile-name {
+            font-family: var(--serif);
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .profile-title {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links a {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .contact-info {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .bio-section h1 {
+            font-family: var(--serif);
+            font-size: 2.8rem;
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .bio-section p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: var(--text);
+        }
+
+        .bio-section a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .bio-section a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        .research-interests {
+            background: var(--bg-alt);
+            padding: 1.2rem 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            border-left: 3px solid var(--accent);
+        }
+
+        .research-interests strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Affiliations / Logo Bar */
+        .affiliations {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+            padding: 2rem 0;
+            margin: 3rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .affiliation-logo {
+            height: 50px;
+            width: auto;
+            opacity: 0.8;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            filter: grayscale(20%);
+        }
+
+        .affiliation-logo:hover {
+            opacity: 1;
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+
+        .affiliation-logo.ucsd {
+            height: 45px;
+        }
+
+        .affiliation-logo.amazon {
+            height: 40px;
+        }
+
+        .affiliation-logo.qualcomm {
+            height: 35px;
+        }
+
+        .affiliation-logo.iitg {
+            height: 55px;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .section-title {
+            font-family: var(--serif);
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+            letter-spacing: -0.01em;
+        }
+
+        /* News Section */
+        .news-list {
+            list-style: none;
+        }
+
+        .news-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 1.5rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.2s ease;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-item:hover {
+            background: var(--bg-alt);
+            margin: 0 -1rem;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        .news-date {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .news-content {
+            font-size: 0.98rem;
+        }
+
+        .news-content a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .news-content a:hover {
+            text-decoration: underline;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
+        .badge.award {
+            background: #e17055;
+        }
+
+        .badge.oral {
+            background: #00b894;
+        }
+
+        /* Publications Section */
+        .pub-category {
+            margin-bottom: 2.5rem;
+        }
+
+        .pub-category-title {
+            font-family: var(--serif);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 1rem;
+            padding-left: 0.5rem;
+            border-left: 3px solid var(--accent-light);
+        }
+
+        .publication {
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            background: var(--bg-alt);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .publication:hover {
+            border-color: var(--accent-light);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .pub-title {
+            font-weight: 600;
+            font-size: 1.02rem;
+            color: var(--primary);
+            margin-bottom: 0.4rem;
+            line-height: 1.4;
+        }
+
+        .pub-authors {
+            font-size: 0.92rem;
+            color: var(--text-light);
+            margin-bottom: 0.4rem;
+        }
+
+        .pub-authors .me {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .pub-venue {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--text);
+        }
+
+        .pub-links {
+            margin-top: 0.8rem;
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .pub-link {
+            font-size: 0.82rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 1px solid var(--border);
+            color: var(--text-light);
+        }
+
+        .pub-link:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        .pub-link i {
+            margin-right: 0.3rem;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            padding: 1.5rem;
+            background: var(--bg-alt);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--accent);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .exp-company-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .exp-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .exp-company {
+            font-family: var(--serif);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .exp-date {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .exp-role {
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .exp-details {
+            list-style: none;
+        }
+
+        .exp-details li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+        }
+
+        .exp-details li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Education Section */
+        .education-item {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 1.5rem;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid var(--border);
+            align-items: center;
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+        }
+
+        .edu-logo {
+            height: 50px;
+            width: 50px;
+            object-fit: contain;
+        }
+
+        .edu-school {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+
+        .edu-degree {
+            font-size: 0.95rem;
+            color: var(--text);
+            margin-bottom: 0.2rem;
+        }
+
+        .edu-focus {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .edu-date {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-align: right;
+        }
+
+        .edu-gpa {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--bg-alt);
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 65px;
+                left: 0;
+                right: 0;
+                background: var(--bg);
+                flex-direction: column;
+                padding: 1rem 2rem;
+                gap: 1rem;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .bio-section h1 {
+                font-size: 2rem;
+            }
+
+            .news-item {
+                grid-template-columns: 1fr;
+                gap: 0.3rem;
+            }
+
+            .education-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .edu-logo {
+                display: none;
+            }
+
+            .edu-date {
+                text-align: left;
+            }
+
+            .exp-header {
+                flex-direction: column;
+            }
+
+            .affiliations {
+                gap: 1.5rem;
+            }
+
+            .affiliation-logo {
+                height: 35px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">Nilesh Prasad Pandey</a>
+            <button class="mobile-toggle" onclick="toggleNav()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="active">about</a></li>
+                <li><a href="#news">news</a></li>
+                <li><a href="#publications">publications</a></li>
+                <li><a href="#experience">experience</a></li>
+                <li><a href="#education">education</a></li>
+                <li><a href="assets/pdf/NileshPrasadPandey_CV.pdf" target="_blank">cv</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="profile-section">
+                <div class="profile-placeholder">NP</div>
+                <!-- Replace with actual image: <img src="assets/img/profile.jpg" alt="Nilesh Prasad Pandey" class="profile-img"> -->
+                <h2 class="profile-name">Nilesh Prasad Pandey</h2>
+                <p class="profile-title">PhD Student, UC San Diego</p>
+                
+                <div class="social-links">
+                    <a href="mailto:nppandey@ucsd.edu" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=rE7JoXgAAAAJ&hl=en&authuser=1" target="_blank" title="Google Scholar">
+                        <i class="ai ai-google-scholar"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nppandey/" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/nppandey1211" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="assets/pdf/NileshPrasadPandey_CV.pdf" target="_blank" title="CV/Resume">
+                        <i class="ai ai-cv"></i>
+                    </a>
+                </div>
+                
+                <p class="contact-info">
+                    <i class="fas fa-phone"></i> +1-858-203-8038<br>
+                    <a href="mailto:nppandey@ucsd.edu">nppandey@ucsd.edu</a>
+                </p>
+            </div>
+
+            <div class="bio-section">
+                <h1>Hello, I'm Nilesh</h1>
+                
+                <p>
+                    I am a PhD student in Computer Science at the <a href="https://ucsd.edu" target="_blank">University of California San Diego</a>, where I focus on making machine learning systems more efficient for real-world deployment. My research sits at the intersection of <strong>inference efficiency</strong>, <strong>model compression</strong>, and <strong>hardware-algorithm co-design</strong>.
+                </p>
+                
+                <p>
+                    Before starting my PhD, I spent three years at <a href="https://www.qualcomm.com/research/artificial-intelligence" target="_blank">Qualcomm AI Research</a> as a Senior Machine Learning Engineer, where I worked on parameter-efficient fine-tuning and low-bit quantization for deploying generative models on edge devices. My work there led to multiple publications at top venues including NeurIPS, CVPR, and ICCV.
+                </p>
+                
+                <p>
+                    I received my Master's degree in Electrical and Computer Engineering from UC San Diego (2021) and my Bachelor's degree in Engineering Physics from <a href="https://www.iitg.ac.in/" target="_blank">IIT Guwahati</a> (2019).
+                </p>
+
+                <div class="research-interests">
+                    <strong>Research Interests:</strong> Efficient LLM Training & Inference, Speculative Decoding, Post-Training Quantization, Parameter-Efficient Fine-Tuning (PEFT), Hardware-Algorithm Co-design
+                </div>
+            </div>
+        </section>
+
+        <!-- Affiliations / Logo Bar -->
+        <div class="affiliations">
+            <a href="https://ucsd.edu" target="_blank" title="UC San Diego">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/University_of_California%2C_San_Diego_seal.svg/200px-University_of_California%2C_San_Diego_seal.svg.png" alt="UC San Diego" class="affiliation-logo ucsd">
+            </a>
+            <a href="https://www.amazon.science/" target="_blank" title="Amazon Science">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/200px-Amazon_logo.svg.png" alt="Amazon Science" class="affiliation-logo amazon">
+            </a>
+            <a href="https://www.qualcomm.com/research/artificial-intelligence" target="_blank" title="Qualcomm AI Research">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Qualcomm-Logo.svg/200px-Qualcomm-Logo.svg.png" alt="Qualcomm AI Research" class="affiliation-logo qualcomm">
+            </a>
+            <a href="https://www.iitg.ac.in/" target="_blank" title="IIT Guwahati">
+                <img src="https://upload.wikimedia.org/wikipedia/en/1/12/IIT_Guwahati_Logo.svg" alt="IIT Guwahati" class="affiliation-logo iitg">
+            </a>
+        </div>
+
+        <!-- News Section -->
+        <section id="news">
+            <h2 class="section-title">News</h2>
+            <ul class="news-list">
+                <li class="news-item">
+                    <span class="news-date">Jun 2025</span>
+                    <span class="news-content">Started research internship at <strong>Amazon AGI Labs</strong> working on efficient RL training for LLMs!</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">2025</span>
+                    <span class="news-content">Selected as a <strong>DAC Young Fellow</strong> for 2025!</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">2025</span>
+                    <span class="news-content">Paper on <a href="#">DPQ-HD</a> accepted at <strong>GLSVLSI 2025</strong> <span class="badge oral">Oral</span></span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Sep 2024</span>
+                    <span class="news-content">Two papers accepted at <strong>NeurIPS 2024</strong>: <a href="#">Sparse High Rank Adapters (SHiRA)</a> and <a href="#">FouRA</a>!</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Sep 2024</span>
+                    <span class="news-content">Started my PhD in Computer Science at <strong>UC San Diego</strong> with a CSE Department Fellowship!</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">2024</span>
+                    <span class="news-content">Workshop paper on quantized knowledge distillation accepted at <strong>ICLR-W 2024</strong>!</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Oct 2023</span>
+                    <span class="news-content">Paper on <a href="#">Mixed Precision PTQ</a> won <span class="badge award">Best Paper Award</span> at BMVC-W 2023!</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Oct 2023</span>
+                    <span class="news-content">Paper on <a href="#">Softmax Bias Correction</a> selected for <span class="badge oral">Oral</span> at RCV workshop, ICCV 2023</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Jun 2022</span>
+                    <span class="news-content">Our video semantic segmentation demo won <span class="badge award">Best Demo Paper Award</span> at <strong>CVPR 2022</strong>!</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications">
+            <h2 class="section-title">Publications</h2>
+            
+            <div class="pub-category">
+                <h3 class="pub-category-title">Conference Papers</h3>
+                
+                <div class="publication">
+                    <div class="pub-title">Sparse High Rank Adapters</div>
+                    <div class="pub-authors">
+                        <span class="me">Pandey N. P.*</span>, Bhardwaj K.*, Priyadarshi S., Ganapathy V., Esteves R., Kadambi S., Borse S., Whatmough P., Garrepalli R., Van Baalen M., Teague H., Nagel M.
+                    </div>
+                    <div class="pub-venue">NeurIPS, 2024 (*Equal Contribution)</div>
+                    <div class="pub-links">
+                        <a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> Paper</a>
+                        <a href="#" class="pub-link"><i class="fab fa-github"></i> Code</a>
+                        <a href="#" class="pub-link"><i class="fas fa-globe"></i> Project</a>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <div class="pub-title">FouRA: Fourier Low Rank Adaptation</div>
+                    <div class="pub-authors">
+                        Borse S., Kadambi S., <span class="me">Pandey N. P.</span>, Bhardwaj K., Ganapathy V., Priyadarshi S., Garrepalli R., Esteves R., Hayat M., Porikli F.
+                    </div>
+                    <div class="pub-venue">NeurIPS, 2024</div>
+                    <div class="pub-links">
+                        <a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> Paper</a>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <div class="pub-title">DPQ-HD: Post-Training Compression for Ultra-Low Power Hyperdimensional Computing</div>
+                    <div class="pub-authors">
+                        <span class="me">Pandey N. P.</span>, Kulkarni S., Wang D., Gungor O., Ponzina F., Rosing T.
+                    </div>
+                    <div class="pub-venue">GLSVLSI, 2025 <span class="badge oral">Oral</span></div>
+                    <div class="pub-links">
+                        <a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> Paper</a>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <div class="pub-title">Real-Time, Accurate, and Consistent Video Semantic Segmentation via Unsupervised Adaptation and Cross-Unit Deployment on Mobile Device</div>
+                    <div class="pub-authors">
+                        Park H., Yessenbayev A., Singhal T., Adhikari N. K., Zhang Y., Borse S. M., Cai H., <span class="me">Pandey N. P.</span>, Yin F., Mayer F., Calidas B., Porikli F.
+                    </div>
+                    <div class="pub-venue">CVPR, 2022 <span class="badge award">Best Demo Paper Award</span></div>
+                    <div class="pub-links">
+                        <a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> Paper</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pub-category">
+                <h3 class="pub-category-title">Under Review</h3>
+                
+                <div class="publication">
+                    <div class="pub-title">Efficient SLM Edge Inference via Outlier-Aware Quantization and Emergent Memories Co-Design</div>
+                    <div class="pub-authors">
+                        <span class="me">Pandey N. P.</span>, Park J., Gungor O., Ponzina F., Rosing T.
+                    </div>
+                    <div class="pub-venue">In Submission, 2025</div>
+                </div>
+            </div>
+
+            <div class="pub-category">
+                <h3 class="pub-category-title">Workshop Papers</h3>
+                
+                <div class="publication">
+                    <div class="pub-title">Oh! We Freeze: Improving Quantized Knowledge Distillation via Signal Propagation Analysis for Large Language Models</div>
+                    <div class="pub-authors">
+                        <span class="me">Pandey N. P.*</span>, Bhardwaj K.*, Priyadarshi S., Lee K., Ma J., Teague H.
+                    </div>
+                    <div class="pub-venue">ICLR-W, 2024 (*Equal Contribution)</div>
+                    <div class="pub-links">
+                        <a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> Paper</a>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <div class="pub-title">A Practical Mixed Precision Algorithm for Post-Training Quantization</div>
+                    <div class="pub-authors">
+                        <span class="me">Pandey N. P.</span>, Nagel M., Van Baalen M., Huang Y., Patel C., Blankevoort T.
+                    </div>
+                    <div class="pub-venue">BMVC-W, 2023 <span class="badge award">Best Paper Award</span></div>
+                    <div class="pub-links">
+                        <a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> Paper</a>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <div class="pub-title">Softmax Bias Correction for Quantized Generative Models</div>
+                    <div class="pub-authors">
+                        <span class="me">Pandey N. P.</span>, Fournarakis M., Patel C., Nagel M.
+                    </div>
+                    <div class="pub-venue">ICCV-W, 2023 <span class="badge oral">Oral</span></div>
+                    <div class="pub-links">
+                        <a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> Paper</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2 class="section-title">Experience</h2>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div class="exp-company-info">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/150px-Amazon_logo.svg.png" alt="Amazon" class="exp-logo">
+                        <span class="exp-company">Amazon AGI Labs</span>
+                    </div>
+                    <span class="exp-date">Jun 2025 – Oct 2025</span>
+                </div>
+                <div class="exp-role">Research Intern — Efficient RL Training for LLMs</div>
+                <ul class="exp-details">
+                    <li>Proposed Rollout-Aware Adaptive N-Gram Speculative Decoding with novel intra-prompt and inter-prompt cache storage policy to maximize token reuse across correlated trajectories</li>
+                    <li>Demonstrated scalability on Qwen family (8B-235B), achieving ~1.8x end-to-end training acceleration and ~2.5x rollout speedup across diverse reasoning and agentic benchmarks</li>
+                    <li>Manuscript in preparation; open-source contribution to vLLM library in progress</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div class="exp-company-info">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Qualcomm-Logo.svg/150px-Qualcomm-Logo.svg.png" alt="Qualcomm" class="exp-logo">
+                        <span class="exp-company">Qualcomm AI Research</span>
+                    </div>
+                    <span class="exp-date">Aug 2021 – Sep 2024</span>
+                </div>
+                <div class="exp-role">Senior Machine Learning Engineer</div>
+                <ul class="exp-details">
+                    <li><strong>Parameter Efficient Fine-Tuning:</strong> Proposed Sparse High Rank Adapters (SHiRA), achieving 2.7% higher accuracy than LoRA on LLaMA-7B with 10x faster adapter switching</li>
+                    <li><strong>Low-Bit Quantization:</strong> Developed bias correction for INT8 softmax, enabling 40% lower inference latency on mobile devices with 2.7dB SQNR gain</li>
+                    <li><strong>Demo Leadership:</strong> Led quantization for interactive demos at CVPR'22, NeurIPS'22, and CVPR'23 including world's fastest ControlNet on mobile</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/University_of_California%2C_San_Diego_seal.svg/100px-University_of_California%2C_San_Diego_seal.svg.png" alt="UCSD" class="edu-logo">
+                <div>
+                    <div class="edu-school">University of California San Diego</div>
+                    <div class="edu-degree">PhD in Computer Science</div>
+                    <div class="edu-focus">Research Focus: Inference and Training Efficiency, Model Compression, Hardware-Algorithm Co-design</div>
+                </div>
+                <div>
+                    <div class="edu-date">Sep 2024 – Present</div>
+                    <div class="edu-gpa">GPA: 3.84/4.0</div>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/University_of_California%2C_San_Diego_seal.svg/100px-University_of_California%2C_San_Diego_seal.svg.png" alt="UCSD" class="edu-logo">
+                <div>
+                    <div class="edu-school">University of California San Diego</div>
+                    <div class="edu-degree">Master of Science in Electrical and Computer Engineering</div>
+                </div>
+                <div>
+                    <div class="edu-date">Sep 2019 – Jun 2021</div>
+                    <div class="edu-gpa">GPA: 3.84/4.0</div>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <img src="https://upload.wikimedia.org/wikipedia/en/1/12/IIT_Guwahati_Logo.svg" alt="IIT Guwahati" class="edu-logo">
+                <div>
+                    <div class="edu-school">Indian Institute of Technology Guwahati</div>
+                    <div class="edu-degree">Bachelor of Technology in Engineering Physics</div>
+                </div>
+                <div>
+                    <div class="edu-date">Jul 2015 – May 2019</div>
+                    <div class="edu-gpa">GPA: 8.46/10.0</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            © 2025 Nilesh Prasad Pandey · Built with ❤️ · 
+            <a href="mailto:nppandey@ucsd.edu">Get in touch</a>
+        </p>
+    </footer>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile navigation toggle
+        function toggleNav() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Active link highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile nav if open
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
